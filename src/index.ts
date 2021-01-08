@@ -14,20 +14,22 @@ joplin.plugins.register({
         const newNoteBody = [];
         let notebookId = null;
 
-        for (const noteId of ids) {
-          const note = await joplin.data.get(["notes", noteId], {
-            fields: ["title", "body", "parent_id"],
-          });
-          newNoteBody.push(["# " + note.title, "", note.body].join("\n"));
+          for (const noteId of ids) {
+            const note = await joplin.data.get(["notes", noteId], {
+              fields: ["title", "body", "parent_id"],
+            });
+            newNoteBody.push(["# " + note.title, "", note.body].join("\n"));
 
-          if (!notebookId) notebookId = note.parent_id;
-        }
 
-        const newNote = {
-          title: "Concatenated note",
-          body: newNoteBody.join("\n\n"),
-          parent_id: notebookId,
-        };
+            if (!notebookId) notebookId = note.parent_id;
+          }
+
+          const newNoteData = {
+            title: "Concatenated note",
+            body: newNoteBody.join("\n\n"),
+            parent_id: notebookId,
+          };
+          const newNote = await joplin.data.post(["notes"], null, newNoteData);
 
           await joplin.commands.execute('openNote', newNote.id);
         }
