@@ -15,6 +15,7 @@ joplin.plugins.register({
           let notebookId = null;
           const newTags = [];
 
+          // collect note data
           for (const noteId of ids) {
             const note = await joplin.data.get(["notes", noteId], {
               fields: ["title", "body", "parent_id"],
@@ -38,6 +39,7 @@ joplin.plugins.register({
             if (!notebookId) notebookId = note.parent_id;
           }
 
+          // create new note
           const newNoteData = {
             title: "Concatenated note",
             body: newNoteBody.join("\n\n"),
