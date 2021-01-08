@@ -29,6 +29,7 @@ joplin.plugins.register({
           parent_id: notebookId,
         };
 
+          await joplin.commands.execute('openNote', newNote.id);
         }
       },
     });
