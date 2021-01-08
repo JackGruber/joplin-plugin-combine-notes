@@ -11,8 +11,8 @@ joplin.plugins.register({
       execute: async () => {
         const ids = await joplin.workspace.selectedNoteIds();
         if (ids.length > 1) {
-        const newNoteBody = [];
-        let notebookId = null;
+          const newNoteBody = [];
+          let notebookId = null;
           const newTags = [];
 
           for (const noteId of ids) {
