@@ -1,6 +1,6 @@
 {
   "name": "joplin-plugin-combine-notes",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "scripts": {
     "dist": "webpack",
     "prepare": "npm run dist",
