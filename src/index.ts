@@ -28,9 +28,9 @@ joplin.plugins.register({
                 limit: 50,
                 page: pageNum++,
               });
-              for (var tagNr = 0; tagNr < noteTags.items.length; tagNr++) {
-                if(newTags.indexOf(noteTags.items[tagNr].id) === -1) {
-                  newTags.push(noteTags.items[tagNr].id)
+              for (const tag of noteTags.items) {
+                if(newTags.indexOf(tag.id) === -1) {
+                  newTags.push(tag.id)
                 }              
               }
             } while (noteTags.has_more);
@@ -46,9 +46,9 @@ joplin.plugins.register({
           const newNote = await joplin.data.post(["notes"], null, newNoteData);
 
           // Add Tags
-          for (var tagNr = 0; tagNr < newTags.length; tagNr++) {
+          for (const tag of newTags) {
             await joplin.data.post(
-              ["tags", newTags[tagNr], "notes"],
+              ["tags", tag, "notes"],
               null,
               { id: newNote.id }
             );
