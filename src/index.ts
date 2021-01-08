@@ -41,7 +41,7 @@ joplin.plugins.register({
 
           // create new note
           const newNoteData = {
-            title: "Concatenated note",
+            title: "Combined note",
             body: newNoteBody.join("\n\n"),
             parent_id: notebookId,
           };
