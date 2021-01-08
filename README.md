@@ -15,7 +15,7 @@ Plugin to combine one or more notes to a new one.
 
 ### Manual
 
-- Download the latest released JPL package (`io.github.jackgruber.combine.jpl`) from [here](https://github.com/JackGruber/joplin-plugin-combine/releases/latest)
+- Download the latest released JPL package (`io.github.jackgruber.combine-notes.jpl`) from [here](https://github.com/JackGruber/joplin-plugin-combine/releases/latest)
 - Close Joplin
 - Copy the downloaded JPL package in your profile `plugins` folder
 - Start Joplin
