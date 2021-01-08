@@ -10,6 +10,7 @@ joplin.plugins.register({
       label: "Combine selected notes",
       execute: async () => {
         const ids = await joplin.workspace.selectedNoteIds();
+        if (ids.length > 1) {
         const newNoteBody = [];
         let notebookId = null;
 
@@ -28,7 +29,7 @@ joplin.plugins.register({
           parent_id: notebookId,
         };
 
-        await joplin.data.post(["notes"], null, newNote);
+        }
       },
     });
 
