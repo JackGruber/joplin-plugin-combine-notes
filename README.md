@@ -25,6 +25,19 @@ Plugin to combine one or more notes to a new one.
 - Select multiple notes to be combined into a new one
 - Click on `Tools > Combine selected notes` or use the command `Combine selected notes` from the context menu
 
+## Options
+
+Go to `Tools > Options > Combine notes`
+
+- `Create combined note as to-do`: New note is created as To-Do. Default `false`
+- `Delete combined notes`: Delete combined notes, after note creation. Default `false`
+- `Preserve Source URL`: The source URL will be added to the new note. Default `false`
+- `Preserve Created Date`: The Created Date will be added to the new note. Default `false`
+- `Preserve Updated Date`: The Updated Date will be added to the new note. Default `false`
+- `Preserve Location`: The Location (Latitude, Longitude, Altitude) will be added to the new note. Default `false`
+- `Metadata Prefix`: The entered text is output before the metadata (URL, Date, Location).
+- `Metadata Suffix`: The entered text is output after the metadata (URL, Date, Location).
+
 ## Keyboard Shortcus
 
 Under `Options > Keyboard Shortcus` you can assign a keyboard shortcut for the following commands:
@@ -40,6 +53,12 @@ To build your one version of the plugin, install node.js and run the following c
 To update the plugin framework, run `npm run update`.
 
 ## Changelog
+
+### v0.2.0 (2021-01-09)
+
+- Option added to create the combined note as a to-do
+- Option added to preserve metadata (Source URL, Creation Date, Updated Date, Location)
+- Option added to delete combined notes
 
 ### v0.1.0 (2021-01-08)
 

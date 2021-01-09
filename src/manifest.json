@@ -2,7 +2,7 @@
 	"manifest_version": 1,
 	"id": "io.github.jackgruber.combine-notes",
 	"app_min_version": "1.6",
-	"version": "1.0.0",
+	"version": "0.2.0",
 	"name": "combine",
 	"description": "Combine one or more notes",
 	"author": "JackGruber",
