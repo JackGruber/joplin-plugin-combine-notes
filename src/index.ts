@@ -6,7 +6,7 @@ joplin.plugins.register({
     console.info("Combine plugin started");
 
     await joplin.settings.registerSection("combineNoteSection", {
-      label: "Combine note",
+      label: "Combine notes",
       iconName: "fas fa-layer-group",
     });
 
