@@ -181,9 +181,9 @@ joplin.plugins.register({
                 page: pageNum++,
               });
               for (const tag of noteTags.items) {
-                if(newTags.indexOf(tag.id) === -1) {
-                  newTags.push(tag.id)
-                }              
+                if (newTags.indexOf(tag.id) === -1) {
+                  newTags.push(tag.id);
+                }
               }
             } while (noteTags.has_more);
 
@@ -203,14 +203,12 @@ joplin.plugins.register({
 
           // Add Tags
           for (const tag of newTags) {
-            await joplin.data.post(
-              ["tags", tag, "notes"],
-              null,
-              { id: newNote.id }
-            );
+            await joplin.data.post(["tags", tag, "notes"], null, {
+              id: newNote.id,
+            });
           }
 
-          await joplin.commands.execute('openNote', newNote.id);
+          await joplin.commands.execute("openNote", newNote.id);
         }
       },
     });
@@ -221,8 +219,8 @@ joplin.plugins.register({
       MenuItemLocation.Tools
     );
     await joplin.views.menuItems.create(
-      'contextMenuItemconcatCombineNotes', 
-      'CombineNotes', 
+      "contextMenuItemconcatCombineNotes",
+      "CombineNotes",
       MenuItemLocation.NoteListContextMenu
     );
   },
