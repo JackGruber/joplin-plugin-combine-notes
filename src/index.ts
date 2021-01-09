@@ -18,6 +18,14 @@ joplin.plugins.register({
       label: "Create combined note as to-do",
     });
 
+    await joplin.settings.registerSetting("deleteCombinedNotes", {
+      value: false,
+      type: SettingItemType.Bool,
+      section: "combineNoteSection",
+      public: true,
+      label: "Delete combined notes",
+    });
+
     await joplin.settings.registerSetting("preserveMetadataSourceUrl", {
       value: false,
       type: SettingItemType.Bool,
@@ -206,6 +214,16 @@ joplin.plugins.register({
             await joplin.data.post(["tags", tag, "notes"], null, {
               id: newNote.id,
             });
+          }
+
+          // delete combined notes
+          const deleteNotes = await joplin.settings.value(
+            "deleteCombinedNotes"
+          );
+          if (deleteNotes === true) {
+            for (const noteId of ids) {
+              await joplin.data.delete(["notes", noteId]);
+            }
           }
 
           await joplin.commands.execute("openNote", newNote.id);
