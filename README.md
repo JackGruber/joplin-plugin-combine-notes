@@ -54,7 +54,7 @@ To update the plugin framework, run `npm run update`.
 
 ## Changelog
 
-### Not released
+### v0.2.0 (2021-01-09)
 
 - Option added to create the combined note as a to-do
 - Option added to preserve metadata (Source URL, Creation Date, Updated Date, Location)
