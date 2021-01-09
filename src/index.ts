@@ -1,10 +1,14 @@
 import joplin from "api";
-import { MenuItemLocation } from "api/types";
+import { MenuItemLocation, SettingItemType } from "api/types";
 
 joplin.plugins.register({
   onStart: async function () {
     console.info("Combine plugin started");
 
+    await joplin.settings.registerSection("combineNoteSection", {
+      label: "Combine note",
+      iconName: "fas fa-layer-group",
+    });
     await joplin.commands.register({
       name: "CombineNotes",
       label: "Combine selected notes",
