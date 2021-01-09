@@ -9,6 +9,15 @@ joplin.plugins.register({
       label: "Combine note",
       iconName: "fas fa-layer-group",
     });
+
+    await joplin.settings.registerSetting("asToDo", {
+      value: false,
+      type: SettingItemType.Bool,
+      section: "combineNoteSection",
+      public: true,
+      label: "Create combined note as to-do",
+    });
+
     await joplin.commands.register({
       name: "CombineNotes",
       label: "Combine selected notes",
@@ -43,11 +52,14 @@ joplin.plugins.register({
             if (!notebookId) notebookId = note.parent_id;
           }
 
+          const asToDo = await joplin.settings.value("asToDo");
+
           // create new note
           const newNoteData = {
             title: "Combined note",
             body: newNoteBody.join("\n\n"),
             parent_id: notebookId,
+            is_todo: asToDo,
           };
           const newNote = await joplin.data.post(["notes"], null, newNoteData);
 
