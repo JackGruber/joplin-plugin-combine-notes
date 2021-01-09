@@ -195,7 +195,7 @@ joplin.plugins.register({
           // create new note
           const newNoteData = {
             title: "Combined note",
-            body: newNoteBody.join("\n\n"),
+            body: newNoteBody.join("\n"),
             parent_id: notebookId,
             is_todo: asToDo,
           };
