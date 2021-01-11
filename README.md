@@ -54,6 +54,10 @@ To update the plugin framework, run `npm run update`.
 
 ## Changelog
 
+### v0.2.1 (2021-01-11)
+
+- Fix: Display Name
+
 ### v0.2.0 (2021-01-09)
 
 - Option added to create the combined note as a to-do
