@@ -50,7 +50,7 @@ To build your one version of the plugin, install node.js and run the following c
 
 ## Updating the plugin framework
 
-To update the plugin framework, run `npm run update`.
+To update the plugin framework, run `npm run update`
 
 ## Changelog
 
