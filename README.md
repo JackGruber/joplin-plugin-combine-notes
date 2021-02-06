@@ -38,9 +38,9 @@ Go to `Tools > Options > Combine notes`
 - `Metadata Prefix`: The entered text is output before the metadata (URL, Date, Location).
 - `Metadata Suffix`: The entered text is output after the metadata (URL, Date, Location).
 
-## Keyboard Shortcus
+## Keyboard Shortcuts
 
-Under `Options > Keyboard Shortcus` you can assign a keyboard shortcut for the following commands:
+Under `Options > Keyboard Shortcuts` you can assign a keyboard shortcut for the following commands:
 
 - `Combine selected notes`
 
