@@ -1,88 +1,12 @@
 import joplin from "api";
-import { MenuItemLocation, SettingItemType } from "api/types";
+import { MenuItemLocation } from "api/types";
+import { settings } from "./settings";
 
 joplin.plugins.register({
   onStart: async function () {
     console.info("Combine plugin started");
 
-    await joplin.settings.registerSection("combineNoteSection", {
-      label: "Combine notes",
-      iconName: "fas fa-layer-group",
-    });
-
-    await joplin.settings.registerSetting("asToDo", {
-      value: false,
-      type: SettingItemType.Bool,
-      section: "combineNoteSection",
-      public: true,
-      label: "Create combined note as to-do",
-    });
-
-    await joplin.settings.registerSetting("deleteCombinedNotes", {
-      value: false,
-      type: SettingItemType.Bool,
-      section: "combineNoteSection",
-      public: true,
-      label: "Delete combined notes",
-    });
-
-    await joplin.settings.registerSetting("preserveMetadataSourceUrl", {
-      value: false,
-      type: SettingItemType.Bool,
-      section: "combineNoteSection",
-      public: true,
-      label: "Preserve Source URL",
-      description:
-        "Preserve the Source by inserting them under the header from the note.",
-    });
-
-    await joplin.settings.registerSetting("preserveMetadataCreatedDate", {
-      value: false,
-      type: SettingItemType.Bool,
-      section: "combineNoteSection",
-      public: true,
-      label: "Preserve Created Date",
-      description:
-        "Preserve the Created Date by inserting them under the header from the note.",
-    });
-
-    await joplin.settings.registerSetting("preserveMetadataUpdatedDate", {
-      value: false,
-      type: SettingItemType.Bool,
-      section: "combineNoteSection",
-      public: true,
-      label: "Preserve Updated Date",
-      description:
-        "Preserve the Updated Date by inserting them under the header from the note.",
-    });
-
-    await joplin.settings.registerSetting("preserveMetadataLocation", {
-      value: false,
-      type: SettingItemType.Bool,
-      section: "combineNoteSection",
-      public: true,
-      label: "Preserve Location",
-      description:
-        "Preserve the Location Date by inserting them under the header from the note.",
-    });
-
-    await joplin.settings.registerSetting("preserveMetadataPrefix", {
-      value: "",
-      type: SettingItemType.String,
-      section: "combineNoteSection",
-      public: true,
-      label: "Metadata Prefix",
-      description: "Prefix for the Metadata section.",
-    });
-
-    await joplin.settings.registerSetting("preserveMetadataSuffix", {
-      value: "",
-      type: SettingItemType.String,
-      section: "combineNoteSection",
-      public: true,
-      label: "Metadata Suffix",
-      description: "Suffix for the Metadata section.",
-    });
+    await settings.register();
 
     await joplin.commands.register({
       name: "CombineNotes",
