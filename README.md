@@ -38,9 +38,9 @@ Go to `Tools > Options > Combine notes`
 - `Metadata Prefix`: The entered text is output before the metadata (URL, Date, Location).
 - `Metadata Suffix`: The entered text is output after the metadata (URL, Date, Location).
 
-## Keyboard Shortcus
+## Keyboard Shortcuts
 
-Under `Options > Keyboard Shortcus` you can assign a keyboard shortcut for the following commands:
+Under `Options > Keyboard Shortcuts` you can assign a keyboard shortcut for the following commands:
 
 - `Combine selected notes`
 
@@ -53,6 +53,11 @@ To build your one version of the plugin, install node.js and run the following c
 To update the plugin framework, run `npm run update`
 
 ## Changelog
+
+### v0.2.2 (2021-05-16)
+
+- Improved: Use Joplin date and time settings
+- Add: Option for combine date
 
 ### v0.2.1 (2021-01-11)
 

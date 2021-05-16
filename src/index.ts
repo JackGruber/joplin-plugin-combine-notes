@@ -1,88 +1,31 @@
 import joplin from "api";
-import { MenuItemLocation, SettingItemType } from "api/types";
+import { MenuItemLocation } from "api/types";
+import { settings } from "./settings";
+import * as moment from "moment";
 
 joplin.plugins.register({
   onStart: async function () {
     console.info("Combine plugin started");
 
-    await joplin.settings.registerSection("combineNoteSection", {
-      label: "Combine notes",
-      iconName: "fas fa-layer-group",
-    });
+    await settings.register();
 
-    await joplin.settings.registerSetting("asToDo", {
-      value: false,
-      type: SettingItemType.Bool,
-      section: "combineNoteSection",
-      public: true,
-      label: "Create combined note as to-do",
-    });
-
-    await joplin.settings.registerSetting("deleteCombinedNotes", {
-      value: false,
-      type: SettingItemType.Bool,
-      section: "combineNoteSection",
-      public: true,
-      label: "Delete combined notes",
-    });
-
-    await joplin.settings.registerSetting("preserveMetadataSourceUrl", {
-      value: false,
-      type: SettingItemType.Bool,
-      section: "combineNoteSection",
-      public: true,
-      label: "Preserve Source URL",
-      description:
-        "Preserve the Source by inserting them under the header from the note.",
-    });
-
-    await joplin.settings.registerSetting("preserveMetadataCreatedDate", {
-      value: false,
-      type: SettingItemType.Bool,
-      section: "combineNoteSection",
-      public: true,
-      label: "Preserve Created Date",
-      description:
-        "Preserve the Created Date by inserting them under the header from the note.",
-    });
-
-    await joplin.settings.registerSetting("preserveMetadataUpdatedDate", {
-      value: false,
-      type: SettingItemType.Bool,
-      section: "combineNoteSection",
-      public: true,
-      label: "Preserve Updated Date",
-      description:
-        "Preserve the Updated Date by inserting them under the header from the note.",
-    });
-
-    await joplin.settings.registerSetting("preserveMetadataLocation", {
-      value: false,
-      type: SettingItemType.Bool,
-      section: "combineNoteSection",
-      public: true,
-      label: "Preserve Location",
-      description:
-        "Preserve the Location Date by inserting them under the header from the note.",
-    });
-
-    await joplin.settings.registerSetting("preserveMetadataPrefix", {
-      value: "",
-      type: SettingItemType.String,
-      section: "combineNoteSection",
-      public: true,
-      label: "Metadata Prefix",
-      description: "Prefix for the Metadata section.",
-    });
-
-    await joplin.settings.registerSetting("preserveMetadataSuffix", {
-      value: "",
-      type: SettingItemType.String,
-      section: "combineNoteSection",
-      public: true,
-      label: "Metadata Suffix",
-      description: "Suffix for the Metadata section.",
-    });
+    function getDateFormated(
+      epoch: number,
+      dateFormat: string,
+      timeFormat: string
+    ) {
+      if (epoch !== 0) {
+        const dateObject = new Date(epoch);
+        const dateString =
+          moment(dateObject.getTime()).format(dateFormat) +
+          " " +
+          moment(dateObject.getTime()).format(timeFormat);
+  
+        return dateString;
+      } else {
+        return "";
+      }
+    }
 
     await joplin.commands.register({
       name: "CombineNotes",
@@ -93,8 +36,6 @@ joplin.plugins.register({
           const newNoteBody = [];
           let notebookId = null;
           const newTags = [];
-          let createdDate = null;
-          let updatedDate = null;
           let preserveMetadata = [];
           const preserveUrl = await joplin.settings.value(
             "preserveMetadataSourceUrl"
@@ -114,6 +55,11 @@ joplin.plugins.register({
           const preserveMetadataSuffix = await joplin.settings.value(
             "preserveMetadataSuffix"
           );
+          const addCombineDate = await joplin.settings.value(
+            "addCombineDate"
+          );
+          const dateFormat = await joplin.settings.globalValue("dateFormat");
+          const timeFormat = await joplin.settings.globalValue("timeFormat");
 
           // collect note data
           for (const noteId of ids) {
@@ -139,15 +85,20 @@ joplin.plugins.register({
             }
 
             if (preserveCreatedDate === true) {
-              createdDate = new Date(note.created_time);
-              preserveMetadata.push("Created: " + createdDate + ")");
+              const createdDate = getDateFormated(note.created_time, dateFormat, timeFormat);
+              preserveMetadata.push("Created: " + createdDate);
             }
 
             if (preserveUpdatedDate === true) {
-              updatedDate = new Date(note.updated_time);
-              preserveMetadata.push("Updated: " + updatedDate + ")");
+              const updatedDate = getDateFormated(note.updated_time, dateFormat, timeFormat);
+              preserveMetadata.push("Updated: " + updatedDate);
             }
 
+            if (addCombineDate === true) {
+              const combineDate = getDateFormated(new Date().getTime(), dateFormat, timeFormat);
+              preserveMetadata.push("Combined: " + combineDate);
+            }
+            
             if (
               preserveMetadataLocation === true &&
               (note.latitude != "0.00000000" ||
