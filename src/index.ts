@@ -1,12 +1,31 @@
 import joplin from "api";
 import { MenuItemLocation } from "api/types";
 import { settings } from "./settings";
+import * as moment from "moment";
 
 joplin.plugins.register({
   onStart: async function () {
     console.info("Combine plugin started");
 
     await settings.register();
+
+    function getDateFormated(
+      epoch: number,
+      dateFormat: string,
+      timeFormat: string
+    ) {
+      if (epoch !== 0) {
+        const dateObject = new Date(epoch);
+        const dateString =
+          moment(dateObject.getTime()).format(dateFormat) +
+          " " +
+          moment(dateObject.getTime()).format(timeFormat);
+  
+        return dateString;
+      } else {
+        return "";
+      }
+    }
 
     await joplin.commands.register({
       name: "CombineNotes",
@@ -38,6 +57,8 @@ joplin.plugins.register({
           const preserveMetadataSuffix = await joplin.settings.value(
             "preserveMetadataSuffix"
           );
+          const dateFormat = await joplin.settings.globalValue("dateFormat");
+          const timeFormat = await joplin.settings.globalValue("timeFormat");
 
           // collect note data
           for (const noteId of ids) {
@@ -63,13 +84,13 @@ joplin.plugins.register({
             }
 
             if (preserveCreatedDate === true) {
-              createdDate = new Date(note.created_time);
-              preserveMetadata.push("Created: " + createdDate + ")");
+              const createdDate = getDateFormated(note.created_time, dateFormat, timeFormat);
+              preserveMetadata.push("Created: " + createdDate);
             }
 
             if (preserveUpdatedDate === true) {
-              updatedDate = new Date(note.updated_time);
-              preserveMetadata.push("Updated: " + updatedDate + ")");
+              const updatedDate = getDateFormated(note.updated_time, dateFormat, timeFormat);
+              preserveMetadata.push("Updated: " + updatedDate);
             }
 
             if (
