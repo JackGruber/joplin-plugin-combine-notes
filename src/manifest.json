@@ -7,5 +7,6 @@
 	"description": "Combine one or more notes",
 	"author": "JackGruber",
 	"homepage_url": "https://github.com/JackGruber/joplin-plugin-combine-notes",
-	"repository_url": "https://github.com/JackGruber/joplin-plugin-combine-notes"
+	"repository_url": "https://github.com/JackGruber/joplin-plugin-combine-notes",
+	"keywords": ["combine", "merge"]
 }
