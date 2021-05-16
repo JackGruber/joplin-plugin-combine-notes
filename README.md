@@ -54,6 +54,11 @@ To update the plugin framework, run `npm run update`.
 
 ## Changelog
 
+### v0.2.2 (2021-05-16)
+
+- Improved: Use Joplin date and time settings
+- Add: Option for combine date
+
 ### v0.2.1 (2021-01-11)
 
 - Fix: Display Name
