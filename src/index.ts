@@ -55,6 +55,9 @@ joplin.plugins.register({
           const preserveMetadataSuffix = await joplin.settings.value(
             "preserveMetadataSuffix"
           );
+          const addCombineDate = await joplin.settings.value(
+            "addCombineDate"
+          );
           const dateFormat = await joplin.settings.globalValue("dateFormat");
           const timeFormat = await joplin.settings.globalValue("timeFormat");
 
@@ -91,6 +94,11 @@ joplin.plugins.register({
               preserveMetadata.push("Updated: " + updatedDate);
             }
 
+            if (addCombineDate === true) {
+              const combineDate = getDateFormated(new Date().getTime(), dateFormat, timeFormat);
+              preserveMetadata.push("Combined: " + combineDate);
+            }
+            
             if (
               preserveMetadataLocation === true &&
               (note.latitude != "0.00000000" ||

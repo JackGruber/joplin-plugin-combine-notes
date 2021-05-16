@@ -64,6 +64,16 @@ export namespace settings {
         "Preserve the Location Date by inserting them under the header from the note.",
     });
 
++   await joplin.settings.registerSetting("addCombineDate", {
+      value: false,
+      type: SettingItemType.Bool,
+      section: "combineNoteSection",
+      public: true,
+      label: "Add combine date",
+      description:
+        "Add the combine date under the header of the notes.",
+    });
+
     await joplin.settings.registerSetting("preserveMetadataPrefix", {
       value: "",
       type: SettingItemType.String,
