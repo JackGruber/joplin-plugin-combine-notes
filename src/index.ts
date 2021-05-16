@@ -36,8 +36,6 @@ joplin.plugins.register({
           const newNoteBody = [];
           let notebookId = null;
           const newTags = [];
-          let createdDate = null;
-          let updatedDate = null;
           let preserveMetadata = [];
           const preserveUrl = await joplin.settings.value(
             "preserveMetadataSourceUrl"
