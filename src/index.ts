@@ -20,7 +20,7 @@ joplin.plugins.register({
           moment(dateObject.getTime()).format(dateFormat) +
           " " +
           moment(dateObject.getTime()).format(timeFormat);
-  
+
         return dateString;
       } else {
         return "";
@@ -55,9 +55,7 @@ joplin.plugins.register({
           const preserveMetadataSuffix = await joplin.settings.value(
             "preserveMetadataSuffix"
           );
-          const addCombineDate = await joplin.settings.value(
-            "addCombineDate"
-          );
+          const addCombineDate = await joplin.settings.value("addCombineDate");
           const dateFormat = await joplin.settings.globalValue("dateFormat");
           const timeFormat = await joplin.settings.globalValue("timeFormat");
 
@@ -85,20 +83,32 @@ joplin.plugins.register({
             }
 
             if (preserveCreatedDate === true) {
-              const createdDate = getDateFormated(note.created_time, dateFormat, timeFormat);
+              const createdDate = getDateFormated(
+                note.created_time,
+                dateFormat,
+                timeFormat
+              );
               preserveMetadata.push("Created: " + createdDate);
             }
 
             if (preserveUpdatedDate === true) {
-              const updatedDate = getDateFormated(note.updated_time, dateFormat, timeFormat);
+              const updatedDate = getDateFormated(
+                note.updated_time,
+                dateFormat,
+                timeFormat
+              );
               preserveMetadata.push("Updated: " + updatedDate);
             }
 
             if (addCombineDate === true) {
-              const combineDate = getDateFormated(new Date().getTime(), dateFormat, timeFormat);
+              const combineDate = getDateFormated(
+                new Date().getTime(),
+                dateFormat,
+                timeFormat
+              );
               preserveMetadata.push("Combined: " + combineDate);
             }
-            
+
             if (
               preserveMetadataLocation === true &&
               (note.latitude != "0.00000000" ||
