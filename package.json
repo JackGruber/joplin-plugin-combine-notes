@@ -29,5 +29,8 @@
   },
   "dependencies": {
     "moment": "^2.29.1"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
