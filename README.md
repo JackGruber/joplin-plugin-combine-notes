@@ -54,6 +54,12 @@ To update the plugin framework, run `npm run update`.
 
 ## Changelog
 
+### v1.0.0 (2021-08-05)
+
+- Improved: Use registerSettings instead of deprecated registerSetting
+
+❗ Requires at least Joplin v1.8.1 ❗
+
 ### v0.2.2 (2021-05-16)
 
 - Improved: Use Joplin date and time settings
