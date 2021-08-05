@@ -54,7 +54,7 @@ To update the plugin framework, run `npm run update`
 
 ## Changelog
 
-### v1.0.0 (2021-08-05)
+### v1.0.1 (2021-08-05)
 
 - Improved: Use registerSettings instead of deprecated registerSetting
 
