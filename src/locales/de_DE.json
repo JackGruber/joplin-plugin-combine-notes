@@ -1,0 +1,19 @@
+{
+  "settings.asToDo": "Kombinierte Notiz als To-Do erstellen",
+  "settings.deleteCombinedNotes": "Kombinierte Notizen löschen",
+  "settings.preserveMetadataSourceUrl": "Quell-URL beibehalten",
+  "settings.preserveMetadataSourceUrlDescription": "Behält die Orginal URL bei, indem Sie unter der Kopfzeile der Notiz eingefügt wird.",
+  "settings.preserveMetadataCreatedDate": "Erstellungsdatum beibehalten",
+  "settings.preserveMetadataCreatedDateDescription": "Behält das Erstellungsdatum bei, indem dies unter der Kopfzeile der Notiz eingefügt wird.",
+  "settings.preserveMetadataUpdatedDate": "Änderungsdatum beibehalten",
+  "settings.preserveMetadataUpdatedDateDescription": "Behält das Änderungsdatum bei, indem dies unter der Kopfzeile der Notiz eingefügt wird.",
+  "settings.preserveMetadataLocation": "Standort beibehalten",
+  "settings.preserveMetadataLocationDescription": "Behält den Standort bei, indem dieser unter der Kopfzeile der Notiz eingefügt wird.",
+  "settings.addCombineDate": "Datum der Kombination hinzufügen",
+  "settings.addCombineDateDescription": "Fügt das Kombinierungsdatum unter der Kopfzeile der Notiz ein.",
+  "settings.preserveMetadataPrefix": "Metadaten-Präfix",
+  "settings.preserveMetadataPrefixDescription": "Präfix für den Abschnitt Metadaten.",
+  "settings.preserveMetadataSuffix": "Metadata-Suffix",
+  "settings.preserveMetadataSuffixDescription": "Suffix für den Abschnitt Metadaten.",
+  "cmd.combinenote": "Markierte Notizen kombinieren"
+}

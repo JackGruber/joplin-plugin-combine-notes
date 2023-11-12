@@ -1,0 +1,19 @@
+{
+  "settings.asToDo": "Create combined note as to-do",
+  "settings.deleteCombinedNotes": "Delete combined notes",
+  "settings.preserveMetadataSourceUrl": "Preserve Source URL",
+  "settings.preserveMetadataSourceUrlDescription": "Preserve the Source by inserting them under the header from the note.",
+  "settings.preserveMetadataCreatedDate": "Preserve Created Date",
+  "settings.preserveMetadataCreatedDateDescription": "Preserve the Created Date by inserting them under the header from the note.",
+  "settings.preserveMetadataUpdatedDate": "Preserve Updated Date",
+  "settings.preserveMetadataUpdatedDateDescription": "Preserve the Updated Date by inserting them under the header from the note.",
+  "settings.preserveMetadataLocation": "Preserve Location",
+  "settings.preserveMetadataLocationDescription": "Preserve the Location Date by inserting them under the header from the note.",
+  "settings.addCombineDate": "Add combine date",
+  "settings.addCombineDateDescription": "Add the combine date under the header of the notes.",
+  "settings.preserveMetadataPrefix": "Metadata Prefix",
+  "settings.preserveMetadataPrefixDescription": "Prefix for the Metadata section.",
+  "settings.preserveMetadataSuffix": "Metadata Suffix",
+  "settings.preserveMetadataSuffixDescription": "Suffix for the Metadata section.",
+  "cmd.combinenote": "Combine selected notes"
+}

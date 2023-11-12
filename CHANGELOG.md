@@ -1,5 +1,7 @@
 # Changelog
 
+- Add: Translation to German
+
 ## not released
 
 ## v1.0.1 (2021-08-05)

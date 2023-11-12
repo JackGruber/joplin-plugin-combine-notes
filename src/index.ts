@@ -2,11 +2,13 @@ import joplin from "api";
 import { MenuItemLocation } from "api/types";
 import { settings } from "./settings";
 import * as moment from "moment";
+import { i18n, combineNote } from "./combineNote";
 
 joplin.plugins.register({
   onStart: async function () {
     console.info("Combine plugin started");
 
+    await combineNote.translate();
     await settings.register();
 
     function getDateFormated(
@@ -29,7 +31,7 @@ joplin.plugins.register({
 
     await joplin.commands.register({
       name: "CombineNotes",
-      label: "Combine selected notes",
+      label: i18n.__("cmd.combinenote"),
       execute: async () => {
         const ids = await joplin.workspace.selectedNoteIds();
         if (ids.length > 1) {
