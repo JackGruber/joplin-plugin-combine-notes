@@ -46,11 +46,7 @@ Under `Options > Keyboard Shortcuts` you can assign a keyboard shortcut for the 
 
 ## Build
 
-To build your one version of the plugin, install node.js and run the following command `npm run dist`
-
-## Updating the plugin framework
-
-To update the plugin framework, run `npm run update`.
+See [BUILD](BUILD.md)
 
 ## Changelog
 
