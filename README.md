@@ -51,10 +51,3 @@ See [BUILD](BUILD.md)
 ## Changelog
 
 See [Changelog](CHANGELOG.md)
-
-## Links
-
-- [Joplin - Getting started with plugin development](https://joplinapp.org/api/get_started/plugins/)
-- [Joplin - Plugin API reference](https://joplinapp.org/api/references/plugin_api/classes/joplin.html)
-- [Joplin - Data API reference](https://joplinapp.org/api/references/rest_api/)
-- [Joplin - Plugin examples](https://github.com/laurent22/joplin/tree/dev/packages/app-cli/tests/support/plugins)
