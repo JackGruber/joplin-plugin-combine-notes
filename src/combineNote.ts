@@ -84,7 +84,9 @@ namespace combineNote {
 
         // Preserve metadata
         if (preserveUrl === true && note.source_url != "") {
-          preserveMetadata.push("[Source](" + note.source_url + ")");
+          preserveMetadata.push(
+            "[" + i18n.__("field.sourceURL") + "](" + note.source_url + ")"
+          );
         }
 
         if (preserveCreatedDate === true) {
@@ -93,7 +95,9 @@ namespace combineNote {
             dateFormat,
             timeFormat
           );
-          preserveMetadata.push("Created: " + createdDate);
+          preserveMetadata.push(
+            i18n.__("field.createdDate") + ": " + createdDate
+          );
         }
 
         if (preserveUpdatedDate === true) {
@@ -102,7 +106,9 @@ namespace combineNote {
             dateFormat,
             timeFormat
           );
-          preserveMetadata.push("Updated: " + updatedDate);
+          preserveMetadata.push(
+            i18n.__("field.updatedDate") + ": " + updatedDate
+          );
         }
 
         if (addCombineDate === true) {
@@ -111,7 +117,9 @@ namespace combineNote {
             dateFormat,
             timeFormat
           );
-          preserveMetadata.push("Combined: " + combineDate);
+          preserveMetadata.push(
+            i18n.__("field.combineDate") + ": " + combineDate
+          );
         }
 
         if (
@@ -122,12 +130,12 @@ namespace combineNote {
         ) {
           preserveMetadata.push(
             [
-              "Location:",
-              "Lat:",
+              i18n.__("field.location") + ":",
+              i18n.__("field.locationLat") + ":",
               note.latitude,
-              "Lon:",
+              i18n.__("field.locationLon") + ":",
               note.longitude,
-              "Altitude:",
+              i18n.__("field.locationAltitude") + ":",
               note.altitude,
             ].join(" ")
           );

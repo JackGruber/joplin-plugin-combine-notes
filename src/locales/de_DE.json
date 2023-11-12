@@ -15,5 +15,13 @@
   "settings.preserveMetadataPrefixDescription": "Präfix für den Abschnitt Metadaten.",
   "settings.preserveMetadataSuffix": "Metadata-Suffix",
   "settings.preserveMetadataSuffixDescription": "Suffix für den Abschnitt Metadaten.",
-  "cmd.combinenote": "Markierte Notizen kombinieren"
+  "cmd.combinenote": "Markierte Notizen kombinieren",
+  "field.updatedDate": "Geändert",
+  "field.createdDate": "Erstellt",
+  "field.combineDate": "Kombiniert",
+  "field.sourceURL": "Quell URL",
+  "field.location": "Lokation",
+  "field.locationLat": "Lat",
+  "field.locationLon": "Lon",
+  "field.locationAltitude": "Höghe"
 }

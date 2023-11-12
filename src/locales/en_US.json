@@ -15,5 +15,13 @@
   "settings.preserveMetadataPrefixDescription": "Prefix for the Metadata section.",
   "settings.preserveMetadataSuffix": "Metadata Suffix",
   "settings.preserveMetadataSuffixDescription": "Suffix for the Metadata section.",
-  "cmd.combinenote": "Combine selected notes"
+  "cmd.combinenote": "Combine selected notes",
+  "field.updatedDate": "Updated",
+  "field.createdDate": "Created",
+  "field.combineDate": "Combined",
+  "field.sourceURL": "Source URL",
+  "field.location": "Location",
+  "field.locationLat": "Lat",
+  "field.locationLon": "Lon",
+  "field.locationAltitude": "Altitude"
 }
