@@ -7,8 +7,6 @@
 - Add: Translation to German
 - Add: Option to change merged note title
 
-## v1.1.0 (2023-11-14)
-
 ## v1.0.1 (2021-08-05)
 
 - Improved: Use registerSettings instead of deprecated registerSetting
