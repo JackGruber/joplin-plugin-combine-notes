@@ -37,6 +37,8 @@ Go to `Tools > Options > Combine notes`
 - `Preserve Location`: The Location (Latitude, Longitude, Altitude) will be added to the new note. Default `false`
 - `Metadata Prefix`: The entered text is output before the metadata (URL, Date, Location).
 - `Metadata Suffix`: The entered text is output after the metadata (URL, Date, Location).
+- `Title of the combined note`: New title of the combined note. Default `Combined note`.
+- `Custom note title`:  New note title with possible variables `{{FIRSTTITLE}}`, `{{LASTTITLE}}`, `{{ALLTITLE}}` and `{{DATE}}`.
 
 ## Keyboard Shortcuts
 
@@ -46,42 +48,8 @@ Under `Options > Keyboard Shortcuts` you can assign a keyboard shortcut for the 
 
 ## Build
 
-To build your one version of the plugin, install node.js and run the following command `npm run dist`
-
-## Updating the plugin framework
-
-To update the plugin framework, run `npm run update`
+See [BUILD](BUILD.md)
 
 ## Changelog
 
-### v1.0.1 (2021-08-05)
-
-- Improved: Use registerSettings instead of deprecated registerSetting
-
-❗ Requires at least Joplin v1.8.1 ❗
-
-### v0.2.2 (2021-05-16)
-
-- Improved: Use Joplin date and time settings
-- Add: Option for combine date
-
-### v0.2.1 (2021-01-11)
-
-- Fix: Display Name
-
-### v0.2.0 (2021-01-09)
-
-- Option added to create the combined note as a to-do
-- Option added to preserve metadata (Source URL, Creation Date, Updated Date, Location)
-- Option added to delete combined notes
-
-### v0.1.0 (2021-01-08)
-
-- First version
-
-## Links
-
-- [Joplin - Getting started with plugin development](https://joplinapp.org/api/get_started/plugins/)
-- [Joplin - Plugin API reference](https://joplinapp.org/api/references/plugin_api/classes/joplin.html)
-- [Joplin - Data API reference](https://joplinapp.org/api/references/rest_api/)
-- [Joplin - Plugin examples](https://github.com/laurent22/joplin/tree/dev/packages/app-cli/tests/support/plugins)
+See [Changelog](CHANGELOG.md)
