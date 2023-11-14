@@ -5,7 +5,11 @@
     "prepare": "npm run dist && husky install",
     "dist": "webpack --env joplin-plugin-config=buildMain && webpack --env joplin-plugin-config=buildExtraScripts && webpack --env joplin-plugin-config=createArchive",
     "updateVersion": "webpack --env joplin-plugin-config=updateVersion",
-    "update": "npm install -g generator-joplin && yo joplin --node-package-manager npm --update --force"
+    "update": "npm install -g generator-joplin && yo joplin --node-package-manager npm --update --force",
+    "release": "npm test && node ./node_modules/joplinplugindevtools/dist/createRelease.js",
+    "preRelease": "npm test && node ./node_modules/joplinplugindevtools/dist/createRelease.js --prerelease",
+    "gitRelease": "node ./node_modules/joplinplugindevtools/dist/createRelease.js --upload",
+    "gitPreRelease": "node ./node_modules/joplinplugindevtools/dist/createRelease.js --upload --prerelease"
   },
   "license": "MIT",
   "keywords": [
@@ -19,6 +23,7 @@
     "fs-extra": "^10.1.0",
     "glob": "^8.0.3",
     "husky": "^6.0.0",
+    "joplinplugindevtools": "^1.0.14",
     "lint-staged": "^11.0.0",
     "on-build-webpack": "^0.1.0",
     "prettier": "2.3.0",
