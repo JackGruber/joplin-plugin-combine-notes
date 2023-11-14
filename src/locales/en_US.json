@@ -20,7 +20,7 @@
   "settings.combinedNoteTitleValueCombined": "Combination of all note titles",
   "settings.combinedNoteTitleValueFirst": "First marked note",
   "settings.combinedNoteTitleValueLast": "Last marked note",
-  "settings.combinedNoteTitleValueCustom": "Customised title",
+  "settings.combinedNoteTitleValueCustom": "Custom note title",
   "settings.combinedNoteTitleCustom": "Custom note title",
   "settings.combinedNoteTitleCustomDescription": "Custom title, available variables: %s",
   "cmd.combinenote": "Combine selected notes",
