@@ -5,6 +5,7 @@
 ## v1.2.0 (2023-11-14)
 
 - Add: Translation to German
+- Add: Option to change merged note title
 
 ## v1.1.0 (2023-11-14)
 
