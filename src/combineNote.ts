@@ -63,8 +63,14 @@ namespace combineNote {
       const addCombineDate = await joplin.settings.value("addCombineDate");
       const dateFormat = await joplin.settings.globalValue("dateFormat");
       const timeFormat = await joplin.settings.globalValue("timeFormat");
+      const combineDate = await combineNote.getDateFormated(
+        new Date().getTime(),
+        dateFormat,
+        timeFormat
+      );
 
       // collect note data
+      let titles = [];
       for (const noteId of ids) {
         preserveMetadata = [];
         const note = await joplin.data.get(["notes", noteId], {
@@ -81,6 +87,7 @@ namespace combineNote {
           ],
         });
         newNoteBody.push("# " + note.title + "\n");
+        titles.push(note.title);
 
         // Preserve metadata
         if (preserveUrl === true && note.source_url != "") {
@@ -112,11 +119,6 @@ namespace combineNote {
         }
 
         if (addCombineDate === true) {
-          const combineDate = await combineNote.getDateFormated(
-            new Date().getTime(),
-            dateFormat,
-            timeFormat
-          );
           preserveMetadata.push(
             i18n.__("field.combineDate") + ": " + combineDate
           );
@@ -174,9 +176,25 @@ namespace combineNote {
 
       const asToDo = await joplin.settings.value("asToDo");
 
+      const titleOption = await joplin.settings.value("combinedNoteTitle");
+      let newTitle = i18n.__("settings.combinedNoteTitleValueDefault");
+      if (titleOption == "first") {
+        newTitle = titles[0];
+      } else if (titleOption == "last") {
+        newTitle = titles[titles.length - 1];
+      } else if (titleOption == "combined") {
+        newTitle = titles.join(", ");
+      } else if (titleOption == "custom") {
+        newTitle = await joplin.settings.value("combinedNoteTitleCustom");
+        newTitle = newTitle.replace("{{FIRSTTITLE}}", titles[0]);
+        newTitle = newTitle.replace("{{LASTTITLE}}", titles[titles.length - 1]);
+        newTitle = newTitle.replace("{{ALLTITLE}}", titles.join(", "));
+        newTitle = newTitle.replace("{{DATE}}", combineDate);
+      }
+
       // create new note
       const newNoteData = {
-        title: "Combined note",
+        title: newTitle,
         body: newNoteBody.join("\n"),
         parent_id: notebookId,
         is_todo: asToDo,

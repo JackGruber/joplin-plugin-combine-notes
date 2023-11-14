@@ -88,6 +88,33 @@ export namespace settings {
         label: i18n.__("settings.preserveMetadataSuffix"),
         description: i18n.__("settings.preserveMetadataSuffixDescription"),
       },
+
+      combinedNoteTitle: {
+        value: "default",
+        type: SettingItemType.String,
+        section: "combineNoteSection",
+        isEnum: true,
+        public: true,
+        label: i18n.__("settings.combinedNoteTitle"),
+        options: {
+          default: i18n.__("settings.combinedNoteTitleValueDefault"),
+          combined: i18n.__("settings.combinedNoteTitleValueCombined"),
+          first: i18n.__("settings.combinedNoteTitleValueFirst"),
+          last: i18n.__("settings.combinedNoteTitleValueLast"),
+          custom: i18n.__("settings.combinedNoteTitleValueCustom"),
+        },
+      },
+      combinedNoteTitleCustom: {
+        value: "",
+        type: SettingItemType.String,
+        section: "combineNoteSection",
+        public: true,
+        label: i18n.__("settings.combinedNoteTitleCustom"),
+        description: i18n.__(
+          "settings.combinedNoteTitleCustomDescription",
+          "{{FIRSTTITLE}}, {{LASTTITLE}}, {{ALLTITLE}}, {{DATE}}"
+        ),
+      },
     });
   }
 }
