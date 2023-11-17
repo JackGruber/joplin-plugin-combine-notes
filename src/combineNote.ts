@@ -60,6 +60,10 @@ namespace combineNote {
       const preserveMetadataSuffix = await joplin.settings.value(
         "preserveMetadataSuffix"
       );
+      const preserveSourceNoteTitles = await joplin.settings.value(
+        "preserveSourceNoteTitles"
+      );
+
       const addCombineDate = await joplin.settings.value("addCombineDate");
       const dateFormat = await joplin.settings.globalValue("dateFormat");
       const timeFormat = await joplin.settings.globalValue("timeFormat");
@@ -86,7 +90,9 @@ namespace combineNote {
             "altitude",
           ],
         });
-        newNoteBody.push("# " + note.title + "\n");
+        if (preserveSourceNoteTitles === true) {
+          newNoteBody.push("# " + note.title + "\n");
+        }
         titles.push(note.title);
 
         // Preserve metadata

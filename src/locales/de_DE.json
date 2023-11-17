@@ -15,6 +15,8 @@
   "settings.preserveMetadataPrefixDescription": "Präfix für den Abschnitt Metadaten.",
   "settings.preserveMetadataSuffix": "Metadata-Suffix",
   "settings.preserveMetadataSuffixDescription": "Suffix für den Abschnitt Metadaten.",
+  "settings.preserveSourceNoteTitles": "Behalten sie die titel der Quellnotizen bei",
+  "settings.preserveSourceNoteTitlesDescription": "Behält die titel ausgewählter Notizen im kombinierten Notiztext bei",
   "settings.combinedNoteTitle": "Titel der Kombinierten Notiz",
   "settings.combinedNoteTitleValueDefault": "Kombinierte Notiz",
   "settings.combinedNoteTitleValueCombined": "Kombination aus allen Notiztitel",

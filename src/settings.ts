@@ -89,6 +89,15 @@ export namespace settings {
         description: i18n.__("settings.preserveMetadataSuffixDescription"),
       },
 
+      preserveSourceNoteTitles: {
+        value: true,
+        type: SettingItemType.Bool,
+        section: "combineNoteSection",
+        public: true,
+        label: i18n.__("settings.preserveSourceNoteTitles"),
+        description: i18n.__("settings.preserveSourceNoteTitlesDescription"),
+      },
+
       combinedNoteTitle: {
         value: "default",
         type: SettingItemType.String,
