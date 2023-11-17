@@ -37,8 +37,9 @@ Go to `Tools > Options > Combine notes`
 - `Preserve Location`: The Location (Latitude, Longitude, Altitude) will be added to the new note. Default `false`
 - `Metadata Prefix`: The entered text is output before the metadata (URL, Date, Location).
 - `Metadata Suffix`: The entered text is output after the metadata (URL, Date, Location).
+- `Preserve Source Note Titles`: Titles of source notes will be embedded in new note. Default `true`.
 - `Title of the combined note`: New title of the combined note. Default `Combined note`.
-- `Custom note title`:  New note title with possible variables `{{FIRSTTITLE}}`, `{{LASTTITLE}}`, `{{ALLTITLE}}` and `{{DATE}}`.
+- `Custom note title`: New note title with possible variables `{{FIRSTTITLE}}`, `{{LASTTITLE}}`, `{{ALLTITLE}}` and `{{DATE}}`.
 
 ## Keyboard Shortcuts
 
