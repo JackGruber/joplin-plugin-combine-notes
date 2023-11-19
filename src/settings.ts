@@ -26,6 +26,15 @@ export namespace settings {
         label: i18n.__("settings.deleteCombinedNotes"),
       },
 
+      preserveSourceNoteTitles: {
+        value: true,
+        type: SettingItemType.Bool,
+        section: "combineNoteSection",
+        public: true,
+        label: i18n.__("settings.preserveSourceNoteTitles"),
+        description: i18n.__("settings.preserveSourceNoteTitlesDescription"),
+      },
+
       preserveMetadataSourceUrl: {
         value: false,
         type: SettingItemType.Bool,
@@ -89,15 +98,6 @@ export namespace settings {
         description: i18n.__("settings.preserveMetadataSuffixDescription"),
       },
 
-      preserveSourceNoteTitles: {
-        value: true,
-        type: SettingItemType.Bool,
-        section: "combineNoteSection",
-        public: true,
-        label: i18n.__("settings.preserveSourceNoteTitles"),
-        description: i18n.__("settings.preserveSourceNoteTitlesDescription"),
-      },
-
       combinedNoteTitle: {
         value: "default",
         type: SettingItemType.String,
@@ -113,6 +113,7 @@ export namespace settings {
           custom: i18n.__("settings.combinedNoteTitleValueCustom"),
         },
       },
+
       combinedNoteTitleCustom: {
         value: "",
         type: SettingItemType.String,
