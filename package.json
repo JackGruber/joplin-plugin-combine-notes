@@ -23,7 +23,7 @@
     "fs-extra": "^10.1.0",
     "glob": "^8.0.3",
     "husky": "^6.0.0",
-    "joplinplugindevtools": "^1.0.14",
+    "joplinplugindevtools": "^1.0.15",
     "lint-staged": "^11.0.0",
     "on-build-webpack": "^0.1.0",
     "prettier": "2.3.0",
