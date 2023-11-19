@@ -31,6 +31,7 @@ Go to `Tools > Options > Combine notes`
 
 - `Create combined note as to-do`: New note is created as To-Do. Default `false`
 - `Delete combined notes`: Delete combined notes, after note creation. Default `false`
+- `Preserve Source Note Titles`: Titles of source notes will be embedded in new note. Default `true`.
 - `Preserve Source URL`: The source URL will be added to the new note. Default `false`
 - `Preserve Created Date`: The Created Date will be added to the new note. Default `false`
 - `Preserve Updated Date`: The Updated Date will be added to the new note. Default `false`
@@ -38,7 +39,7 @@ Go to `Tools > Options > Combine notes`
 - `Metadata Prefix`: The entered text is output before the metadata (URL, Date, Location).
 - `Metadata Suffix`: The entered text is output after the metadata (URL, Date, Location).
 - `Title of the combined note`: New title of the combined note. Default `Combined note`.
-- `Custom note title`:  New note title with possible variables `{{FIRSTTITLE}}`, `{{LASTTITLE}}`, `{{ALLTITLE}}` and `{{DATE}}`.
+- `Custom note title`: New note title with possible variables `{{FIRSTTITLE}}`, `{{LASTTITLE}}`, `{{ALLTITLE}}` and `{{DATE}}`.
 
 ## Keyboard Shortcuts
 
