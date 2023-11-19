@@ -2,6 +2,8 @@
 
 ## not released
 
+- Add: Option to preserve source note title in the combined note text
+
 ## v1.2.0 (2023-11-14)
 
 - Add: Translation to German
