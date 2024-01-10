@@ -11,5 +11,7 @@
   "keywords": ["combine", "merge"],
   "categories": ["productivity"],
   "screenshots": [],
-  "icons": {}
+  "icons": {
+    "256": "img/icon_256.png"
+  }
 }
