@@ -6,10 +6,12 @@
   "name": "Combine notes",
   "description": "Combine one or more notes",
   "author": "JackGruber",
-  "homepage_url": "https://github.com/JackGruber/joplin-plugin-combine-notes",
+  "homepage_url": "https://github.com/JackGruber/joplin-plugin-combine-notes/blob/master/README.md",
   "repository_url": "https://github.com/JackGruber/joplin-plugin-combine-notes",
   "keywords": ["combine", "merge"],
   "categories": ["productivity"],
   "screenshots": [],
-  "icons": {}
+  "icons": {
+    "256": "img/icon_256.png"
+  }
 }
