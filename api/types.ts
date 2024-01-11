@@ -586,7 +586,6 @@ export enum ContentScriptType {
 	 * ```javascript
 	 * const response = await webviewApi.postMessage(contentScriptId, message);
 	 * ```
-<<<<<<< HEAD
 	 *
 	 * - `contentScriptId` is the ID you've defined when you registered the
 	 *   content script. You can retrieve it from the
@@ -594,15 +593,6 @@ export enum ContentScriptType {
 	 * - `message` can be any basic JavaScript type (number, string, plain
 	 *   object), but it cannot be a function or class instance.
 	 *
-=======
-	 *
-	 * - `contentScriptId` is the ID you've defined when you registered the
-	 *   content script. You can retrieve it from the
-	 *   {@link ContentScriptContext | context}.
-	 * - `message` can be any basic JavaScript type (number, string, plain
-	 *   object), but it cannot be a function or class instance.
-	 *
->>>>>>> develop
 	 * When you post a message, the plugin can send back a `response` thus
 	 * allowing two-way communication:
 	 *
@@ -621,6 +611,16 @@ export enum ContentScriptType {
 	 *
 	 * To include a regular Markdown-It plugin, that doesn't make use of any
 	 * Joplin-specific features, you would simply create a file such as this:
+	 *
+	 * ```javascript
+	 * module.exports = {
+	 *     default: function(context) {
+	 *         return {
+	 *             plugin: require('markdown-it-toc-done-right');
+	 *         }
+	 *     }
+	 * }
+	 * ```
 	 */
 	MarkdownItPlugin = 'markdownItPlugin',
 

@@ -1,6 +1,6 @@
 {
   "name": "joplin-plugin-combine-notes",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "scripts": {
     "prepare": "npm run dist && husky install",
     "dist": "webpack --env joplin-plugin-config=buildMain && webpack --env joplin-plugin-config=buildExtraScripts && webpack --env joplin-plugin-config=createArchive",
@@ -16,14 +16,14 @@
     "joplin-plugin"
   ],
   "devDependencies": {
-    "@joplin/lib": "^2.6.3",
+    "@joplin/lib": "~2.9",
     "@types/node": "^18.7.13",
     "chalk": "^4.1.0",
     "copy-webpack-plugin": "^11.0.0",
     "fs-extra": "^10.1.0",
     "glob": "^8.0.3",
     "husky": "^6.0.0",
-    "joplinplugindevtools": "^1.0.14",
+    "joplinplugindevtools": "^1.0.15",
     "lint-staged": "^11.0.0",
     "on-build-webpack": "^0.1.0",
     "prettier": "2.3.0",
