@@ -2,6 +2,8 @@
 
 ## not released
 
+- Add: Screenshots / icon for [https://joplinapp.org/plugins/](https://joplinapp.org/plugins/)
+
 ## v1.2.1 (2023-11-19)
 
 - Add: Option to preserve source note title in the combined note text

@@ -2,7 +2,7 @@
 
 Plugin to combine one or more notes to a new one.
 
-<img src=img/main.jpg>
+<img src=img/main.png>
 
 ## Installation
 
