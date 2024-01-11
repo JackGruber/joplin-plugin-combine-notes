@@ -16,7 +16,7 @@
     "joplin-plugin"
   ],
   "devDependencies": {
-    "@joplin/lib": "^2.6.3",
+    "@joplin/lib": "~2.9",
     "@types/node": "^18.7.13",
     "chalk": "^4.1.0",
     "copy-webpack-plugin": "^11.0.0",
