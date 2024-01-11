@@ -1,6 +1,6 @@
 {
   "name": "joplin-plugin-combine-notes",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "scripts": {
     "prepare": "npm run dist && husky install",
     "dist": "webpack --env joplin-plugin-config=buildMain && webpack --env joplin-plugin-config=buildExtraScripts && webpack --env joplin-plugin-config=createArchive",
