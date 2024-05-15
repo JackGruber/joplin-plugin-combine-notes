@@ -4,6 +4,21 @@ Plugin to combine one or more notes to a new one.
 
 <img src=img/main.png>
 
+<!-- TOC -->
+
+- [Installation](#installation)
+  - [Automatic](#automatic)
+  - [Manual](#manual)
+    - [Manual via file system](#manual-via-file-system)
+    - [Manual via file via GUI](#manual-via-file-via-gui)
+- [Usage](#usage)
+- [Options](#options)
+- [Keyboard Shortcuts](#keyboard-shortcuts)
+- [Build](#build)
+- [Changelog](#changelog)
+
+<!-- /TOC -->
+
 ## Installation
 
 ### Automatic
